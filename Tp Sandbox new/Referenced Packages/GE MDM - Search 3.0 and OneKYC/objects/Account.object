@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>Account_Modification_Request</fullName>
+        <availability>online</availability>
+        <description>Account Modification Request</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Account Modification Request</masterLabel>
+        <openType>noSidebar</openType>
+        <page>GE_MDM_AccountModificationRequest</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_Comments_Attachments</fullName>
+        <availability>online</availability>
+        <description>Add more comments / attachments</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add Comments / Attachments</masterLabel>
+        <openType>sidebar</openType>
+        <page>GE_MDM_AddMoreComments</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_New_Address</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add New Address</masterLabel>
+        <openType>sidebar</openType>
+        <page>GE_MDM_Add_New_Address</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>GE_MDM_Subscribe</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Subscribe</masterLabel>
+        <openType>sidebar</openType>
+        <page>GE_MDM_SubscribeAccountBtn</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Open_Escalation</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Open Escalation</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>//Include the following AJAX toolkit libraries
+{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/apex.js&quot;)}
+
+   // call apex webservice method
+   var url= sforce.apex.execute(&quot;GEMDM.GE_MDM_OpenEscalationExtension&quot;, &quot;openEscalate&quot;, {accid:&apos;{!Account.Id}&apos;});
+window.location.href=url;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Start_OneKYC_Process</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Start OneKYC Process</masterLabel>
+        <openType>sidebar</openType>
+        <page>GE_MDM_AccountCheck</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>
